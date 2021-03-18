@@ -1,30 +1,14 @@
-class Car {
-  constructor(brand) {
-    this.brand = brand;
-    this.speed = 0;
+class TestComponent extends HTMLElement {
+  constructor() {
+    super();
+    this.innerHTML = "<p>test</p>";
   }
-  accelerate(amount) {
-    this.speed += amount;
+  connectedCallback() {
+    console.log("composant ajouté!");
   }
-  brake(amount) {
-    this.speed -= amount;
-  }
-  status() {
-    return this.brand + " running at " + this.speed + " km/h";
-  }
-  updateParagraph() {
-    document.querySelector("p").innerText = this.status();
+  disconnectedCallback() {
+    console.log("composant retiré!");
   }
 }
 
-const renault = new Car("Renault");
-renault.accelerate(100);
-renault.brake(50);
-console.log(renault.status());
-renault.updateParagraph();
-
-const ferrari = new Car("Ferrari");
-ferrari.accelerate(50);
-ferrari.brake(25);
-console.log(ferrari.status());
-ferrari.updateParagraph();
+customElements.define("test-component", TestComponent);
