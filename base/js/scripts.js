@@ -1,7 +1,7 @@
 class TestComponent extends HTMLElement {
   constructor() {
     super();
-    this.innerHTML = "<p>test</p>";
+    this.innerHTML = "<p>test2</p>";
     this.addEventListener("click", () => this.remove());
   }
   connectedCallback() {
