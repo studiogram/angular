@@ -1,0 +1,7 @@
+<h2>{{title}} ({{setPriceEuro()}}) ({{priceEuro}}) x {{quantity}}</h2>
+<p>Total : {{quantity * price}}€</p>
+<p>Taxes inc.(20%) : {{setTax() * quantity}}€</p>
+<!-- <button [disabled]="!valid">envoyer</button> -->
+<input type="number" [(ngModel)]="quantity">
+<button (click)="more()">Ajouter</button>
+<button (mouseover)="newPrice()">Survol</button>

@@ -1,0 +1,10 @@
+$rouge: purple;
+p {
+  color: blue;
+  span {
+    color: $rouge;
+  }
+  @media (min-width: 768px) {
+    color: grey;
+  }
+}

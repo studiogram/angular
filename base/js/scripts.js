@@ -24,7 +24,7 @@ class TestComponent extends HTMLElement {
     console.log("composant ajouté!");
     this.addEventListener("click", () => (this.style.color = "blue"));
     this.innerHTML = `
-    <h2>${piscines[this.id].city}</h2>
+    <h3>${piscines[this.id].city}</h3>
     <p>Nombre de piscines : ${piscines[this.id].quantity}</p>
     `;
   }
