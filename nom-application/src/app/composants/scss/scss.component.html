@@ -1,1 +1,11 @@
-<p>scss <span>works</span>!</p>
+<p [ngStyle]="{background: ( (valid == true) ? color1 : color2 )}" [ngClass]="{'text-success' : valid == true}">scss <span>works</span>!</p>
+
+<h3 *ngIf="valid == true; else novalid">Validé!</h3>
+
+<ng-template #novalid>
+    <h3>Non validé!</h3>
+</ng-template>
+
+
+
+

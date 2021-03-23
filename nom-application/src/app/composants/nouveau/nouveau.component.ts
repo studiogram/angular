@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-nouveau',
@@ -17,7 +18,8 @@ export class NouveauComponent implements OnInit {
     this.priceEuro = this.price + '€';
   }
   ngOnInit(): void {
-
+    console.log($);
+    $('h2').text('test');
   }
   setTax() {
     return this.price * .2

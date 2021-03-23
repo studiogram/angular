@@ -1,0 +1,5 @@
+<!-- <p *ngFor="let animal of animaux">{{ animal }}</p> -->
+
+<p *ngFor="let animal of animaux; let i=index">{{i}} - {{animal}}</p>
+
+<p *ngFor="let animauxDetail of animauxDetails"><u>Nom :</u> {{animauxDetail.name}} - <u>Quantité :</u> {{animauxDetail.quantity}}</p>

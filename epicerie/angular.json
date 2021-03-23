@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nom-application": {
+    "epicerie": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nom-application",
+            "outputPath": "dist/epicerie",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nom-application:build"
+            "browserTarget": "epicerie:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nom-application:build:production"
+              "browserTarget": "epicerie:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nom-application:build"
+            "browserTarget": "epicerie:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -117,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "nom-application:serve"
+            "devServerTarget": "epicerie:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "nom-application:serve:production"
+              "devServerTarget": "epicerie:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "nom-application"
+  "defaultProject": "epicerie"
 }

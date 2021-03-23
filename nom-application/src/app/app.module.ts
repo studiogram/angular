@@ -10,6 +10,8 @@ import { NomComponent } from './composants/nom/nom.component';
 import { NouveauComponent } from './composants/nouveau/nouveau.component';
 import { ItisComponent } from './composants/itis/itis.component';
 import { ScssComponent } from './composants/scss/scss.component';
+import { BouclesComponent } from './composants/boucles/boucles.component';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { ScssComponent } from './composants/scss/scss.component';
     NomComponent,
     NouveauComponent,
     ItisComponent,
-    ScssComponent
+    ScssComponent,
+    BouclesComponent
   ],
   imports: [
     BrowserModule,
