@@ -1,5 +1,5 @@
 /* Modules : */
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -11,8 +11,13 @@ import { NouveauComponent } from './composants/nouveau/nouveau.component';
 import { ItisComponent } from './composants/itis/itis.component';
 import { ScssComponent } from './composants/scss/scss.component';
 import { BouclesComponent } from './composants/boucles/boucles.component';
+import { PipesComponent } from './composants/pipes/pipes.component';
 
+import { AnimauxService } from './services/animaux.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -21,14 +26,18 @@ import { BouclesComponent } from './composants/boucles/boucles.component';
     NouveauComponent,
     ItisComponent,
     ScssComponent,
-    BouclesComponent
+    BouclesComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AnimauxService,
+    {provide: LOCALE_ID, useValue: "fr-FR"}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

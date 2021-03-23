@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from 'src/app/interfaces/produit';
+import { ProduitsService } from 'src/app/services/produits.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,15 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
-  produits: {name: string, img: string, price: number, stock: number}[] = [
-    {name: 'Cerise', img: '/assets/cerise.jpg',price: 5,stock: 10 },
-    {name: 'Citron', img: '/assets/citron.jpg',price: 4,stock: 4 },
-    {name: 'Fraise', img: '/assets/fraise.jpg',price: 3,stock: 10 },
-    {name: 'Poire', img: '/assets/poire.jpg',price: 2,stock: 4 },
-  ];
-  constructor() { }
+  produits: Produit[];
+  constructor(private _produitsService: ProduitsService) { 
+    this.produits = this._produitsService.produits;
+  }
 
   ngOnInit(): void {
+    
+  }
+  delete() {
+    this._produitsService.deleteProduct();
   }
 
 }

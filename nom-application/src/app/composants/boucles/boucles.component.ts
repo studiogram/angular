@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Animal } from 'src/app/interfaces/animal';
+import { AnimauxService } from 'src/app/services/animaux.service';
 
 @Component({
   selector: 'app-boucles',
@@ -15,15 +17,18 @@ export class BouclesComponent implements OnInit {
     nom: "Toto",
     note: 20
   };
-  animauxDetails: any = [
-    {name : 'koala', quantity: 5}, 
-    {name : 'salamandre', quantity: 3}, 
-    {name : 'perroquet', quantity: 8}
-  ];
-  constructor() { }
+
+  animalDetails: Animal =  {
+    name: 'cobra',
+    quantity: 12
+  }
+  animauxDetails: Animal[];
+
+  constructor(private _animaux: AnimauxService) { }
 
   ngOnInit(): void {
-    console.log(this.animaux);
+    this.animauxDetails = this._animaux.animauxDetails;
+
     // this.animaux.forEach(animal => {
     //   console.log(animal);
     // });
