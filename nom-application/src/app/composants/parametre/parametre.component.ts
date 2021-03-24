@@ -9,7 +9,7 @@ import { AnimauxService } from 'src/app/services/animaux.service';
   styleUrls: ['./parametre.component.scss']
 })
 export class ParametreComponent implements OnInit {
-  id: string;
+  id: number;
   animal: Animal;
   constructor(private _animaux: AnimauxService, private router: ActivatedRoute) { 
     // console.log(this._animaux.animauxDetails);
@@ -18,7 +18,10 @@ export class ParametreComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.router.snapshot.params['id']);
     this.id = this.router.snapshot.params['id'];
-    this.animal = this._animaux.animauxDetails[this.id];
+    /* Méthode 1 : parcours du tableau dans le composant : */
+    // this.animal = this._animaux.animauxDetails[this.id];
+    /* Méthode 2 : parcours du tableau depuis le service : */
+    this.animal = this._animaux.readAnimal(this.id);
   }
 
 }

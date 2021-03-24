@@ -11,4 +11,12 @@ export class AnimauxService {
     {name : 'perroquet', quantity: 8}
   ];
   constructor() { }
+  readAnimal(id: number) {
+    return this.animauxDetails[id];
+  }
 }
+
+// C : Create 
+// R : Read 
+// U : Update 
+// D : Delete 

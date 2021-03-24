@@ -9,6 +9,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MenuComponent } from './components/menu/menu.component';
     ProductAddComponent,
     ProductUpdateComponent,
     ErrorComponent,
-    MenuComponent
+    MenuComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

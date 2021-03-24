@@ -1,8 +1,6 @@
 <p>{{lastUpdate | date : 'EEEE, d,MMMM, y'}}</p>
 <p>{{total | currency: 'EUR'}}</p>
 
-<p *ngFor="let animauxDetail of animauxDetails; let i = index">
-    <a [routerLink]="['/pipes', i]">{{animauxDetail.name}}</a>
-</p>
+<app-input *ngFor="let animauxDetail of animauxDetails; let i = index" [id]="i" [animal]="animauxDetail"></app-input>
 
 <button (click)="afterAction()">Bouton avec actions et changement de composant</button>

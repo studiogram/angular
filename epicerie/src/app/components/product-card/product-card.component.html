@@ -1,0 +1,15 @@
+<div class="card" [ngClass]="{'bg-danger-light' : produit.stock < 5}">
+    <img class="card-img-top" [src]="produit.img" [alt]="produit.name" />
+    <div class="card-body">
+        <h5 class="card-title">{{produit.name | uppercase}}</h5>
+        <ng-container *ngIf="produit.stock >= 5; else lowStock">
+            <p class="card-text text-success">En stock ( {{produit.stock}} )</p>
+        </ng-container>
+        <ng-template #lowStock>
+            <p class="card-text text-danger">Stock faible ( {{produit.stock}} )</p>
+        </ng-template>
+        <p class="card-text">{{produit.price | currency: 'EUR'}}</p>
+        <a [routerLink]="['/produits', i]" class="btn btn-secondary d-block mt-4">Modifier</a>
+        <button (click)="delete()" class="btn btn-danger d-block mt-2 w-100">Supprimer</button>
+    </div>
+</div>

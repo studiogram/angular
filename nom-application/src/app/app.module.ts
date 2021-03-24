@@ -19,6 +19,8 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ErrorComponent } from './composants/error/error.component';
 import { ParametreComponent } from './composants/parametre/parametre.component';
+import { InputComponent } from './composants/input/input.component';
+import { FormulaireComponent } from './composants/formulaire/formulaire.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -31,7 +33,9 @@ registerLocaleData(localeFr, 'fr');
     BouclesComponent,
     PipesComponent,
     ErrorComponent,
-    ParametreComponent
+    ParametreComponent,
+    InputComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,
