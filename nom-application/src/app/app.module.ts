@@ -17,6 +17,8 @@ import { AnimauxService } from './services/animaux.service';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ErrorComponent } from './composants/error/error.component';
+import { ParametreComponent } from './composants/parametre/parametre.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -27,7 +29,9 @@ registerLocaleData(localeFr, 'fr');
     ItisComponent,
     ScssComponent,
     BouclesComponent,
-    PipesComponent
+    PipesComponent,
+    ErrorComponent,
+    ParametreComponent
   ],
   imports: [
     BrowserModule,
