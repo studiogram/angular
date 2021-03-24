@@ -2,7 +2,7 @@
 <h1 class="text-center my-5">Liste de nos produits</h1>
 <div class="container">
     <div class="row">
-        <div class="col-lg-3" *ngFor="let produit of produits">
+        <div class="col-lg-3" *ngFor="let produit of produits; let i = index">
             <div class="card" [ngClass]="{'bg-danger-light' : produit.stock < 5}">
                 <img class="card-img-top" [src]="produit.img" [alt]="produit.name" />
                 <div class="card-body">
@@ -14,7 +14,7 @@
                         <p class="card-text text-danger">Stock faible ( {{produit.stock}} )</p>
                     </ng-template>
                     <p class="card-text">{{produit.price | currency: 'EUR'}}</p>
-                    <a class="btn btn-secondary d-block mt-4">Modifier</a>
+                    <a [routerLink]="['/produits', i]" class="btn btn-secondary d-block mt-4">Modifier</a>
                     <button (click)="delete()" class="btn btn-danger d-block mt-2 w-100">Supprimer</button>
                 </div>
             </div>
