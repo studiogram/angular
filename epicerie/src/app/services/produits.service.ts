@@ -18,7 +18,8 @@ export class ProduitsService {
   addProduct(produit: Produit): void {
     this.produits.push(produit);
   }
-  deleteProduct(){
-    console.log('supprimer produit');
+  deleteProduct(i: number){
+    console.log(i);
+    this.produits.splice(i, 1);
   }
 }

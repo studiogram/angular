@@ -21,6 +21,8 @@ import { ErrorComponent } from './composants/error/error.component';
 import { ParametreComponent } from './composants/parametre/parametre.component';
 import { InputComponent } from './composants/input/input.component';
 import { FormulaireComponent } from './composants/formulaire/formulaire.component';
+import { ParentComponent } from './composants/parent/parent.component';
+import { EnfantComponent } from './composants/enfant/enfant.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -35,7 +37,9 @@ registerLocaleData(localeFr, 'fr');
     ErrorComponent,
     ParametreComponent,
     InputComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    ParentComponent,
+    EnfantComponent
   ],
   imports: [
     BrowserModule,

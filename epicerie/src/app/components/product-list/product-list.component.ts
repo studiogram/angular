@@ -17,8 +17,10 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
-
+  onUpdate(quantity: number) {
+    console.log(quantity);
+    this.stockTotal = quantity;
+  }
 
 }
