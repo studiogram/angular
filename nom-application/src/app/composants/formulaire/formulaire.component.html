@@ -1,5 +1,16 @@
 <form #newAnimal="ngForm" (ngSubmit)="onSubmit(newAnimal)">
-    <input type="text" name="animal" ngModel>
+    <p>valid : {{animalInput.valid}}</p>
+    <p>invalid : {{animalInput.invalid}}</p>
+    <p>value : {{animalInput.value}}</p>
+    <p>touched : {{animalInput.touched}}</p>
+    <p>dirty : {{animalInput.dirty}}</p>
+
+    <p *ngIf="animalInput.invalid" class="text-danger">Ce champs n'accepte que les lettres</p>
+    <input type="text" name="animal" pattern="^[a-zA-Z]+$" #animalInput="ngModel" ngModel>
+
+    <p *ngIf="familleInput.invalid && familleInput.touched" class="text-danger">Ce champs doit avoir au minimum 5 caractères</p>
+    <input type="text" name="famille" minlength="5" #familleInput="ngModel" ngModel>
+
     <input type="number" name="stock" ngModel>
-    <button type="submit">envoyer</button>
+    <button type="submit" [disabled]="newAnimal.invalid">envoyer</button>
 </form>

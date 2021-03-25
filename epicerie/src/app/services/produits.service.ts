@@ -12,6 +12,12 @@ export class ProduitsService {
     {name: 'Poire', img: '/assets/poire.jpg',price: 2,stock: 4 },
   ];
   constructor() { }
+  stockTotal() {
+    return this.produits.reduce((cumul, produit) => cumul + produit.stock , 0);
+  }
+  addProduct(produit: Produit): void {
+    this.produits.push(produit);
+  }
   deleteProduct(){
     console.log('supprimer produit');
   }
