@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Produit } from 'src/app/interfaces/produit';
+import { ProduitsService } from 'src/app/services/produits.service';
 
 @Component({
   selector: 'app-product-update',
@@ -7,11 +9,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-update.component.scss']
 })
 export class ProductUpdateComponent implements OnInit {
-  index: number;
-  constructor(private router: ActivatedRoute) { }
+  i: number;
+  produit: Produit;
+  constructor(private router: ActivatedRoute, private _produitsService: ProduitsService) { }
 
   ngOnInit(): void {
-    this.index = this.router.snapshot.params['numero'];
+    this.i = this.router.snapshot.params['numero'];
+    this.produit = this._produitsService.readProduit(this.i);
+    console.log(this.produit);
   }
 
 }
