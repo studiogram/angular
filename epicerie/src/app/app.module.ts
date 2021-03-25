@@ -12,6 +12,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductFormUpdateComponent } from './components/product-form-update/product-form-update.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     ErrorComponent,
     MenuComponent,
     ProductCardComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFormUpdateComponent
   ],
   imports: [
     BrowserModule,

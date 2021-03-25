@@ -1,1 +1,6 @@
-<p>{{i}} - {{produit.name}}</p>
+<h1 class="text-center my-5">{{produit.name}}</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <app-product-form-update class="col-lg-5" [produit]="produit" [i]="i"></app-product-form-update>
+    </div>
+</div>

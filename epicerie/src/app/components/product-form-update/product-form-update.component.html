@@ -1,0 +1,16 @@
+<div class="card px-4">
+    <div class="card-body">
+        <p class="text-success text-center">{{message}} </p>
+        <form #productForm="ngForm" (ngSubmit)="updateProduct()">
+            <label class="form-label" for="name">Nom :</label>
+            <input class="form-control mb-3" type="text" id="name" name="name" [(ngModel)]="produit.name" ngModel>
+            <label class="form-label" for="img">Image :</label>
+            <input class="form-control mb-3" type="text" id="img" name="img" [(ngModel)]="produit.img" ngModel>
+            <label class="form-label" for="price">Prix :</label>
+            <input class="form-control mb-3" type="number" id="price" name="price" [(ngModel)]="produit.price" ngModel>
+            <label class="form-label" for="stock">Stock :</label>
+            <input class="form-control mb-3" type="number" id="stock" name="stock" [(ngModel)]="produit.stock" ngModel>
+            <button type="submit" class="btn btn-primary w-100">Modifier le produit</button>
+        </form>
+    </div>
+</div>
